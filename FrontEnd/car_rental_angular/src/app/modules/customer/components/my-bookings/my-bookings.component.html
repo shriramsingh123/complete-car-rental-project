@@ -1,0 +1,48 @@
+<!-- <nz-spin>
+    <nz-table>
+        <thead>
+            <tr>
+                <th style="font-weight: bolder; color: #003973;" >From</th>
+                <th style="font-weight: bolder; color: #003973;" >To</th>
+                <th style="font-weight: bolder; color: #003973;" >Days</th>
+                <th style="font-weight: bolder; color: #003973;" >Price</th>
+                <th style="font-weight: bolder; color: #003973;" >Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let booking of bookings" >
+                <td>{{booking.fromDate | date: 'MM d , y'}}</td>
+                <td>{{booking.toDate | date: 'MM d , y'}}</td>
+                <td>{{booking.days}}</td>
+                <td>{{booking.price}}</td>
+                <strong [style]="{'color': booking.bookCarStatus === 'APPROVED' ? 'green' : booking.bookCarStatus === 'REJECTED' ? 'blue' : ''}"> 
+                {{booking.bookCarStatus}}
+                </strong>
+            </tr>
+        </tbody>
+    </nz-table>
+</nz-spin> -->/
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th style="font-weight: bolder; color: #003973;" >From</th>
+            <th style="font-weight: bolder; color: #003973;" >To</th>
+            <th style="font-weight: bolder; color: #003973;" >Days</th>
+            <th style="font-weight: bolder; color: #003973;" >Price</th>
+            <th style="font-weight: bolder; color: #003973;" >Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let booking of bookings" >
+            <td>{{booking.fromDate | date}}</td>
+            <td>{{booking.toDate | date }}</td>
+            <td>{{booking.days}}</td>
+            <td>${{booking.price}}</td>
+            <strong [style]="{'color': booking.bookCarStatus === 'APPROVED' ? 'green' : booking.bookCarStatus === 'REJECTED' ? 'blue' : ''}"> 
+            {{booking.bookCarStatus}}
+            </strong>
+        </tr>
+    </tbody>
+</table>
